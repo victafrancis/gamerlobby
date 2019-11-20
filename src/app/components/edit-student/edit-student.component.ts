@@ -26,6 +26,7 @@ export class EditStudentComponent implements OnInit {
   studentForm: FormGroup;
   subjectArray: Subject[] = [];
   SectioinArray: any = ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw'];
+  selected = null;
 
   ngOnInit() {
     this.updateBookForm();
