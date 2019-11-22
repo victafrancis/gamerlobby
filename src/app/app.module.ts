@@ -22,6 +22,8 @@ import { AddPlayerComponent } from './components/add-player/add-player.component
 import { PlayersListComponent } from './components/players-list/players-list.component';
 import { EditPlayerComponent } from './components/edit-player/edit-player.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { GamesComponent } from './components/games/games.component';
+import { JoinGameComponent } from './components/join-game/join-game.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { AdminHomeComponent } from './components/admin-home/admin-home.component
     AddPlayerComponent,
     PlayersListComponent,
     EditPlayerComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    GamesComponent,
+    JoinGameComponent
   ],
   imports: [
     BrowserModule,
