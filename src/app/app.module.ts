@@ -15,17 +15,22 @@ import { AngularMaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 
 /* Angular 8 CRUD services */
-import { ApiService } from './shared/api.service';
+import { ApiService } from './shared2/api.service';
+
 
 /* Reactive form services in Angular 8 */
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddPlayerComponent } from './components/add-player/add-player.component';
+import { PlayersListComponent } from './components/players-list/players-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddStudentComponent,
     EditStudentComponent,
-    StudentsListComponent
+    StudentsListComponent,
+    AddPlayerComponent,
+    PlayersListComponent
   ],
   imports: [
     BrowserModule,
