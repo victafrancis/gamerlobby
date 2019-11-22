@@ -1,6 +1,6 @@
 <!-- Title group  -->
 <div class="title-group">
-    <h1 class="mat-h1">Edit Player</h1>
+    <h1 class="mat-h1">Join Game</h1>
     <mat-divider fxFlex="1 0"></mat-divider>
   </div>
   
@@ -42,21 +42,35 @@
             </mat-error>
           </mat-form-field>
 
-           <!-- games_played -->
+           <!-- favorite game -->
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Games played" formControlName="games_played">
+            <input matInput placeholder="Favorite Game" formControlName="games_played">
             <mat-error *ngIf="handleError('games_played', 'required')">
               You must provide a<strong>games played</strong>
             </mat-error>
           </mat-form-field>
 
-           <!-- status -->
+           <!-- Customer -->
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="status" formControlName="status">
-            <mat-error *ngIf="handleError('status', 'required')">
-              You must provide a<strong>status</strong>
-            </mat-error>
+            <mat-label>Customer Game</mat-label>
+            <mat-select [(ngModel)]="selected" formControlName="customer">
+              <mat-option [value]="g" *ngFor="let g of games">
+                {{g.title}}
+              </mat-option></mat-select>
+              <mat-error *ngIf="handleError('games_played', 'required')">
+                You must provide a<strong>games played</strong>
+              </mat-error>
           </mat-form-field>
+
+          <!-- <mat-form-field class="example-full-width">
+            <mat-label>Game</mat-label>
+            <mat-select [(ngModel)]="selected" formControlName="customer">
+              <mat-option [value]="g" *ngFor="let g of games">
+                {{g.title}}
+              </mat-option></mat-select>
+            
+        </mat-form-field> -->
+
         </div>
       </mat-card>
   

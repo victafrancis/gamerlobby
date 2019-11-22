@@ -75,7 +75,6 @@ export class ApiService {
   }
 
   getGames(): Observable<IGame[]>{
-
     return this.http.get<IGame[]>(this.games_url);
   }
 }

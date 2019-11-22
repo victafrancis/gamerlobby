@@ -1,9 +1,10 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ViewChild, NgZone } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { MatChipInputEvent } from '@angular/material';
+import { MatChipInputEvent, MatTableDataSource } from '@angular/material';
 import { ApiService } from './../../shared2/api.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
+import { Game } from 'src/app/shared2/game';
 
 export interface Subject {
   name: string;
@@ -24,9 +25,19 @@ export class JoinGameComponent implements OnInit {
   @ViewChild('resetPlayerForm',{static:false}) myNgForm;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   playerForm: FormGroup;
-
+  // GameData: any = [];
+  public games = [];
+  dataSource: MatTableDataSource<Game>;
+  selected = null;
+  
   ngOnInit() {
     this.updateBookForm();
+
+    this.playerApi.getGames().subscribe(data => {
+      this.games = data;
+      // this.dataSource = new MatTableDataSource<Game>(this.GameData);
+     
+    })
   }
 
   constructor(
@@ -45,9 +56,10 @@ export class JoinGameComponent implements OnInit {
         score: [data.score, [Validators.required]],
         time: [data.time, [Validators.required]],
         games_played: [data.games_played, [Validators.required]],
-        status: [data.status, [Validators.required]]
+        customer: [data.games_played, [Validators.required]]
       })      
     })    
+    
   }
 //[data.player, [Validators.required]]
 
@@ -59,7 +71,7 @@ export class JoinGameComponent implements OnInit {
       score: ['', [Validators.required]],
       time: ['', [Validators.required]],
       games_played: ['', [Validators.required]],
-      status: ['', [Validators.required]]
+      customer: ['', [Validators.required]]
     })
   }
 
@@ -78,6 +90,7 @@ export class JoinGameComponent implements OnInit {
   }
 
   /* Update book */
+  //if game has changed, change available in db to unavailable
   joinGame() {
     // console.log(this.playerForm.value)
     // var id = this.actRoute.snapshot.paramMap.get('id');
