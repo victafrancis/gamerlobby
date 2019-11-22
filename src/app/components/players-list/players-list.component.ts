@@ -13,7 +13,7 @@ export class PlayersListComponent implements OnInit {
   PlayerData: any = [];
   dataSource: MatTableDataSource<Player>;
   player: string;
-  
+
   @ViewChild(MatPaginator,{static:false}) paginator: MatPaginator;
   // displayedColumns: string[] = ['_id', 'player_name', 'student_email', 'section', 'action'];
   displayedColumns: string[] = ['player', 'rank', 'score', 'time','games_played','status','action'];
@@ -25,10 +25,15 @@ export class PlayersListComponent implements OnInit {
       setTimeout(() => {
         this.dataSource.paginator = this.paginator;
       }, 0);
-    })    
+    })
   }
 
   ngOnInit() { }
+
+  // applying the filters to search
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   deletePlayer(index: number, e){
     if(window.confirm('Are you sure')) {
@@ -40,7 +45,7 @@ export class PlayersListComponent implements OnInit {
   }
 
   Search(){
-    
+
     // this.dataSource.data = this.dataSource.data.filter(res=>{
     //     console.log(res.player.toLocaleLowerCase());
 
