@@ -24,7 +24,6 @@ export class AddPlayerComponent implements OnInit {
   @ViewChild('resetPlayerForm',{static:false}) myNgForm;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   playerForm: FormGroup;
-  
   RankArray: any = ['1', '2', '3', '4', '5'];
   Status: any = ['Available','Unavailable'];
   favoriteGameArray: FavoriteGame[] = [];
