@@ -39,7 +39,8 @@ import { PlayersListComponent } from './components/players-list/players-list.com
     AngularMaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],
