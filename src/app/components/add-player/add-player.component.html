@@ -21,10 +21,10 @@
           <!-- Rank -->
           <mat-form-field class="example-full-width">
               <mat-label>Rank</mat-label>
-              <mat-select [(value)]="selected" formControlName="rank">
+              <!-- <mat-select [(value)]="selected" formControlName="rank">
                 <mat-option [(value)]="rankArray" *ngFor="let rankArray of RankArray">
                   {{rankArray}}
-                </mat-option></mat-select>
+                </mat-option></mat-select> -->
                 <mat-error *ngIf="handleError('rank', 'required')">
                   You must provide a <strong>rank </strong>
                 </mat-error>
@@ -57,10 +57,10 @@
          <!-- Status -->
          <mat-form-field class="example-full-width">
                 <mat-label>Status</mat-label>
-                <mat-select [(value)]="selected2" formControlName="status">
+                <!-- <mat-select [(value)]="selected2" formControlName="status">
                   <mat-option [(value)]="status" *ngFor="let status of Status">
                     {{status}}
-                  </mat-option></mat-select>
+                  </mat-option></mat-select> -->
                 <mat-error *ngIf="handleError('status', 'required')">
                 You must provide a <strong>status </strong>
                 </mat-error>
