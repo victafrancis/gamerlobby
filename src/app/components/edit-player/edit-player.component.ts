@@ -29,6 +29,7 @@ export class EditPlayerComponent implements OnInit {
   selected = null;
   selected2 = null;
 
+
   ngOnInit() {
     this.updateBookForm();
   }

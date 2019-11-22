@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'add-player', component: AddPlayerComponent },
   { path: 'players-list', component: PlayersListComponent },
   { path: 'admin-home', component: AdminHomeComponent },
-  { path: 'join-game', component: JoinGameComponent },
+  { path: 'join-game/:id', component: JoinGameComponent },
   { path: 'games', component: GamesComponent }
 ];
 
