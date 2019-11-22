@@ -29,6 +29,11 @@ export class AdminHomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  // applying the filters to search
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   deletePlayer(index: number, e){
     if(window.confirm('Are you sure')) {
       const data = this.dataSource.data;
