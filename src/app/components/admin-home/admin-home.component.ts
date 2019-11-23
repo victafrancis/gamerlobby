@@ -12,7 +12,6 @@ export class AdminHomeComponent implements OnInit {
   PlayerData: any =[];
   dataSource: MatTableDataSource<Player>;
   player:string;
-
   @ViewChild(MatPaginator,{static:false}) paginator: MatPaginator;
   displayedColumns: string[] = ['player', 'rank', 'score', 'time','games_played','status','action'];
 

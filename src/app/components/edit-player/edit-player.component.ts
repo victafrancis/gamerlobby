@@ -19,9 +19,7 @@ export class EditPlayerComponent implements OnInit {
   visible = true;
   selectable = true; //used for the chiplist
   removable = true; //used for the chiplist
-  // @ViewChild('chipList',{static:false}) chipList;
   @ViewChild('resetPlayerForm',{static:false}) myNgForm;
-  // readonly separatorKeysCodes: number[] = [ENTER, COMMA]; // separator keys
   playerForm: FormGroup; //Form name
   RankArray: any = ['1', '2', '3', '4', '5'];
   Status: any = ['Available','Unavailable'];
@@ -75,7 +73,6 @@ export class EditPlayerComponent implements OnInit {
   /* Add dynamic languages */
   add(event: MatChipInputEvent): void {
     const input = event.input;
-
     if (input) {
       input.value = '';
     }
