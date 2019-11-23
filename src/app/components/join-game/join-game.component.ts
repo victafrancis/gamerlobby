@@ -56,7 +56,7 @@ export class JoinGameComponent implements OnInit {
       console.log(this.userObj);
       this.playerForm = this.fb.group({     
         status: [data.status],
-        // customer: [data.title, [Validators.required]]
+        customer: ['', [Validators.required]]
       })}
     
     )    
