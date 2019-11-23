@@ -1,11 +1,11 @@
 import { Router, ActivatedRoute } from '@angular/router';
-import { Component, OnInit, ViewChild, NgZone } from '@angular/core';
+import { Component, OnInit, ViewChild, NgZone, Input, ɵPlayer } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent, MatTableDataSource } from '@angular/material';
 import { ApiService } from './../../shared2/api.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
 import { Game } from 'src/app/shared2/game';
-
+import { Player } from 'src/app/shared2/player';
 export interface Subject {
   name: string;
 }
@@ -28,15 +28,16 @@ export class JoinGameComponent implements OnInit {
   public games = [];
   dataSource: MatTableDataSource<Game>;
   selected = null;
-  
-
+  userObj: Player = null;
+  id:any ='temp';
+  player = null;
 
   ngOnInit() {
     this.updateBookForm();
     this.playerApi.getGames().subscribe(data => {
       this.games = data;
-     
-    })
+    });
+    
   }
 
   constructor(
@@ -46,14 +47,19 @@ export class JoinGameComponent implements OnInit {
     private actRoute: ActivatedRoute,
     private playerApi: ApiService,
   ) { 
-    var id = this.actRoute.snapshot.paramMap.get('id');
-    this.playerApi.GetPlayer(id).subscribe(data => {
+    this.id = this.actRoute.snapshot.paramMap.get('id');
+    this.playerApi.GetPlayer(this.id).subscribe(data => {
+      console.log(data);
+      console.log(data.player);
+      this.userObj = data;
+      this.userObj.player = data.player;
+      console.log(this.userObj);
       this.playerForm = this.fb.group({     
         status: [data.status],
         customer: [data.title, [Validators.required]]
-      })
-      
-    })    
+      })}
+    
+    )    
   }
 
   /* Reactive book form */
