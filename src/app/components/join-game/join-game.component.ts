@@ -30,7 +30,7 @@ export class JoinGameComponent implements OnInit {
   selected = null;
   userObj: Player = null;
   id:any ='temp';
-  player = null;
+  customer = null;
 
   ngOnInit() {
     this.updateBookForm();
