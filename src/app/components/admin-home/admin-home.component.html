@@ -58,10 +58,15 @@
 
             <!-- Edit Route Button  -->
             <button mat-raised-button color="primary" class="push-right"
-              [routerLink]="['/edit-player/', element._id]">Edit</button>
+              [routerLink]="['/edit-player/', element._id]">
+              <i class="material-icons">edit
+              </i>Edit</button>
 
             <!-- Delete Route Button  -->
-            <button mat-raised-button color="accent" (click)="deletePlayer(i, element)">Delete</button>
+            <button mat-raised-button color="accent" (click)="deletePlayer(i, element)">
+              <i class="material-icons">
+              delete_forever
+              </i>Delete</button>
 
           </td>
         </ng-container>

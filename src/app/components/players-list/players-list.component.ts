@@ -15,7 +15,6 @@ export class PlayersListComponent implements OnInit {
   player: string;
 
   @ViewChild(MatPaginator,{static:false}) paginator: MatPaginator;
-  // displayedColumns: string[] = ['_id', 'player_name', 'student_email', 'section', 'action'];
   displayedColumns: string[] = ['player', 'rank', 'score', 'time','games_played','status','action'];
 
   constructor(private playerApi: ApiService) {
@@ -45,15 +44,6 @@ export class PlayersListComponent implements OnInit {
   }
 
   Search(){
-
-    // this.dataSource.data = this.dataSource.data.filter(res=>{
-    //     console.log(res.player.toLocaleLowerCase());
-
-    //     return res.player.toLocaleLowerCase().match(this.PlayerData);
-    //   })
-    // const playerName = this.player;
-    // const found = this.PlayerData.find(player => this.player > 10);
-
     this.PlayerData = this.PlayerData.filter(res=>{
       return res.player.toLocaleLowerCase().match(this.PlayerData.find(this.player));
     })
