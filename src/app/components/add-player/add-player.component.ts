@@ -18,21 +18,21 @@ export interface FavoriteGame {
 export class AddPlayerComponent implements OnInit {
   visible = true;
   selectable = true;
-  removable = true;
-  addOnBlur = true;
-  @ViewChild('chipList',{static:false}) chipList;
   @ViewChild('resetPlayerForm',{static:false}) myNgForm;
-  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   playerForm: FormGroup;
   RankArray: any = ['1', '2', '3', '4', '5'];
   Status: any = ['Available','Unavailable'];
-  favoriteGameArray: FavoriteGame[] = [];
   selected = null;
   selected2 = null;
-
+  selected3 = null;
+  public games = [];
 
   ngOnInit() {
     this.submitBookForm();
+    this.playerApi.getGames().subscribe(data => {
+      this.games = data;
+    });
+
   }
 
   constructor(
@@ -40,7 +40,10 @@ export class AddPlayerComponent implements OnInit {
     private router: Router,
     private ngZone: NgZone,
     private playerApi: ApiService
-  ) { }
+  ) {
+
+
+   }
 
   /* Reactive book form */
   submitBookForm() {
@@ -63,9 +66,10 @@ export class AddPlayerComponent implements OnInit {
   submitPlayerForm() {
     if (this.playerForm.valid) {
       this.playerApi.AddPlayer(this.playerForm.value).subscribe(res => {
-        this.ngZone.run(() => this.router.navigateByUrl('/players-list'))
+        this.ngZone.run(() => this.router.navigateByUrl('/admin-home'))
       });
     }
   }
 
+  
 }

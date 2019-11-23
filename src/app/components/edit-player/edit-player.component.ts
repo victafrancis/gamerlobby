@@ -19,19 +19,24 @@ export class EditPlayerComponent implements OnInit {
   visible = true;
   selectable = true; //used for the chiplist
   removable = true; //used for the chiplist
-  addOnBlur = true;
-  @ViewChild('chipList',{static:false}) chipList;
+  // @ViewChild('chipList',{static:false}) chipList;
   @ViewChild('resetPlayerForm',{static:false}) myNgForm;
-  readonly separatorKeysCodes: number[] = [ENTER, COMMA]; // separator keys
+  // readonly separatorKeysCodes: number[] = [ENTER, COMMA]; // separator keys
   playerForm: FormGroup; //Form name
   RankArray: any = ['1', '2', '3', '4', '5'];
   Status: any = ['Available','Unavailable'];
   selected = null;
   selected2 = null;
+  selected3 = null;
+  public games = [];
 
 
   ngOnInit() {
     this.updateBookForm();
+    this.playerApi.getGames().subscribe(data => {
+      this.games = data;
+    });
+    
   }
 
   constructor(

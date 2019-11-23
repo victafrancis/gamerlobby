@@ -43,11 +43,4 @@ export class AdminHomeComponent implements OnInit {
     }
   }
 
-
-  // Search(){
-
-  //   this.PlayerData = this.PlayerData.filter(res=>{
-  //     return res.player.toLocaleLowerCase().match(this.PlayerData.find(this.player));
-  //   })
-  // }
 }
