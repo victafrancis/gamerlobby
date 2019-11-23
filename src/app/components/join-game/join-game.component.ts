@@ -19,11 +19,7 @@ export interface Subject {
 export class JoinGameComponent implements OnInit {
   visible = true;
   selectable = true;
-  removable = true;
-  addOnBlur = true;
-  @ViewChild('chipList',{static:false}) chipList;
   @ViewChild('resetPlayerForm',{static:false}) myNgForm;
-  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   playerForm: FormGroup;
   public games = [];
   dataSource: MatTableDataSource<Game>;
@@ -49,11 +45,8 @@ export class JoinGameComponent implements OnInit {
   ) { 
     this.id = this.actRoute.snapshot.paramMap.get('id');
     this.playerApi.GetPlayer(this.id).subscribe(data => {
-      console.log(data);
-      console.log(data.player);
       this.userObj = data;
       this.userObj.player = data.player;
-      console.log(this.userObj);
       this.playerForm = this.fb.group({     
         status: [data.status],
         customer: ['', [Validators.required]]

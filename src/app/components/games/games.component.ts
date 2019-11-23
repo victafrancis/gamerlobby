@@ -10,11 +10,9 @@ import { Game } from 'src/app/shared2/game';
 })
 export class GamesComponent implements OnInit {
   GameData: any = [];
-  // public games =[];
   dataSource: MatTableDataSource<Game>;
   @ViewChild(MatPaginator,{static:false}) paginator: MatPaginator;
   displayedColumns: string[] = ['title', 'platform', 'genre', 'rating','publisher','release','status'];
-
 
   constructor(private playerApi: ApiService) { 
     this.playerApi.getGames().subscribe(data => {

@@ -19,7 +19,6 @@ export class EditStudentComponent implements OnInit {
   visible = true;
   selectable = true;
   removable = true;
-  addOnBlur = true;
   @ViewChild('chipList',{static:false}) chipList;
   @ViewChild('resetStudentForm',{static:false}) myNgForm;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];

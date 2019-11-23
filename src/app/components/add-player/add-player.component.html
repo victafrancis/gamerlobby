@@ -6,7 +6,7 @@
 
   <!-- Form -->
   <div class="inner-wrapper">
-    <form [formGroup]="playerForm" (ngSubmit)="submitPlayerForm()" #resetPlayerForm="ngForm" novalidate>
+    <form [formGroup]="playerForm" (ngSubmit)="submitPlayerForm()" #resetPlayerForm="ngForm">
       <!-- Left block -->
       <mat-card>
         <div class="controlers-wrapper">
@@ -46,18 +46,23 @@
                 </mat-error>
             </mat-form-field>
 
-         <!-- Games Played -->
+
+         <!-- Favorite Game -->
          <mat-form-field class="example-full-width">
-                <input matInput placeholder="games_played" formControlName="games_played">
-                <mat-error *ngIf="handleError('games_played', 'required')">
-                You must provide a <strong>rank </strong>
-                </mat-error>
-            </mat-form-field>
+                <mat-label>Favorite Game</mat-label>
+                <mat-select [(ngModel)]="selected2" formControlName="games_played">
+                  <mat-option [value]="g.title" *ngFor="let g of games">
+                    {{g.title}}
+                  </mat-option></mat-select>
+                  <mat-error *ngIf="handleError('games_played', 'required')">
+                      Game is required.
+                    </mat-error>
+              </mat-form-field>
 
          <!-- Status -->
          <mat-form-field class="example-full-width">
                 <mat-label>Status</mat-label>
-                <mat-select [(ngModel)]="selected2" formControlName="status">
+                <mat-select [(ngModel)]="selected3" formControlName="status">
                   <mat-option [value]="status" *ngFor="let status of Status">
                     {{status}}
                   </mat-option></mat-select>
