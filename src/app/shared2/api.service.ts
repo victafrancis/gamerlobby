@@ -14,8 +14,7 @@ export class ApiService {
 
   endpoint: string = 'http://localhost:4000/api';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-
- private games_url: string ="/assets/data/games.json";
+  private games_url: string ="/assets/data/games.json";
 
   constructor(private http: HttpClient) { }
 
