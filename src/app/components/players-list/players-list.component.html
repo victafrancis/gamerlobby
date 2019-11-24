@@ -6,8 +6,9 @@
   <p *ngIf="PlayerData.length <= 0" class="no-data">There is no player added yet!</p>
 
   <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-  </mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search"> 
+  </mat-form-field><i class="material-icons">search</i>
+
 
   <div class="container" *ngIf="PlayerData.length > 0">  
 
