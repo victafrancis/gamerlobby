@@ -1,22 +1,21 @@
 <!-- Title group  -->
 <div class="title-group">
-    <h1 class="mat-h1">Player List</h1>
+    <h1 class="mat-h1">
+      <i class="material-icons">home</i>&nbsp;Player List</h1>
     <mat-divider fxFlex="1 0"></mat-divider>
     <button  mat-button  routerLinkActive="active" routerLink="/games">Games</button>
     <button  mat-button  routerLinkActive="active" routerLink="/add-player">Add Player</button>
     <mat-divider fxFlex="1 0"></mat-divider>
   </div>
 
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-  </mat-form-field><i class="material-icons">search</i>
-
-
   <p *ngIf="PlayerData.length <= 0" class="no-data">There is no player added yet!</p>
+
   <div class="container" *ngIf="PlayerData.length > 0">
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+      </mat-form-field><i class="material-icons">search</i>
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource">
-
 
         <ng-container matColumnDef="player">
           <th mat-header-cell *matHeaderCellDef> Player Name </th>

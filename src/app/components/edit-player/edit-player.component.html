@@ -75,10 +75,10 @@
       <mat-card>
         <div class="full-wrapper button-wrapper">
           <div class="button-wrapper">
-            <button mat-flat-button color="warn">Update</button>
+            <button mat-flat-button color="warn" [disabled]="playerForm.invalid">Update</button>
           </div>
         </div>
       </mat-card>
     </form>
-    <button mat-flat-button color="warn" [routerLink]="['/admin-home']"><i class="material-icons">arrow_left</i>Back</button>
+    <button mat-flat-button color="warn" [routerLink]="['/admin-home']"><i class="material-icons">arrow_left</i>Cancel</button>
   </div>
