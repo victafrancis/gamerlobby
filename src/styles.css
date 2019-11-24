@@ -47,3 +47,7 @@ body .push-right{margin-right:10px;}
 
 .mat-drawer-container{ 
   background: #616161}
+
+  .mat-fab.mat-warn, .mat-flat-button.mat-warn, .mat-mini-fab.mat-warn, .mat-raised-button.mat-warn {
+    background-color:#e38200;
+}

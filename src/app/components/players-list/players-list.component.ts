@@ -18,6 +18,7 @@ export class PlayersListComponent implements OnInit {
   displayedColumns: string[] = ['player', 'rank', 'score', 'time','games_played','status','action'];
 
   constructor(private playerApi: ApiService) {
+    
     this.playerApi.GetPlayers().subscribe(data => {
       this.PlayerData = data;
       this.dataSource = new MatTableDataSource<Player>(this.PlayerData);
