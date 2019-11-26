@@ -12,7 +12,7 @@ import { IGame } from '../game';
 
 export class ApiService {
 
-  endpoint: string = 'http://localhost:4000/api';
+  endpoint: string = 'https://enigmatic-hollows-04063.herokuapp.com/api';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   private games_url: string ="/assets/data/games.json";
 
@@ -59,7 +59,7 @@ export class ApiService {
     )
   }
 
-  // Error handling 
+  // Error handling
   errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
