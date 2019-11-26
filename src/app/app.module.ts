@@ -3,7 +3,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EditStudentComponent } from './components/edit-student/edit-student.component';
 
 /* Angular material */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +27,6 @@ import { JoinGameComponent } from './components/join-game/join-game.component';
 @NgModule({
   declarations: [
     AppComponent,
-    EditStudentComponent,
     AddPlayerComponent,
     PlayersListComponent,
     EditPlayerComponent,

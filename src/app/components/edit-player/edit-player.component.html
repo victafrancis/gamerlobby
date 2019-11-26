@@ -3,7 +3,7 @@
     <h1 class="mat-h1">Edit Player</h1>
     <mat-divider fxFlex="1 0"></mat-divider>
   </div>
-  
+
   <!-- Form -->
   <div class="inner-wrapper">
     <form [formGroup]="playerForm" (ngSubmit)="updatePlayerForm()" #resetPlayerForm="ngForm" novalidate>
@@ -14,7 +14,7 @@
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Player name" formControlName="player">
             <mat-error *ngIf="handleError('player', 'required')">
-              You must provide a<strong>player name</strong>
+              You must provide a <strong>player name</strong>
             </mat-error>
           </mat-form-field>
 
@@ -34,15 +34,15 @@
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Score" formControlName="score">
             <mat-error *ngIf="handleError('score', 'required')">
-              You must provide a<strong>score</strong>
+              You must provide a <strong>score</strong>
             </mat-error>
           </mat-form-field>
 
           <!-- time -->
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="time" formControlName="time">
+            <input type="number" matInput placeholder="Hours" formControlName="time">
             <mat-error *ngIf="handleError('time', 'required')">
-              You must provide a<strong>time</strong>
+              You must provide <strong>hours played</strong>
             </mat-error>
           </mat-form-field>
 

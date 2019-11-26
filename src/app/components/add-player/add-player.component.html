@@ -33,7 +33,7 @@
 
         <!-- Score -->
         <mat-form-field class="example-full-width">
-                <input matInput placeholder="score" formControlName="score">
+                <input matInput placeholder="Score" formControlName="score">
                 <mat-error *ngIf="handleError('score', 'required')">
                 You must provide a <strong>score </strong>
                 </mat-error>
@@ -41,9 +41,9 @@
 
          <!-- Time -->
          <mat-form-field class="example-full-width">
-                <input matInput placeholder="time" formControlName="time">
+                <input type="number" matInput placeholder="Hours" formControlName="time">
                 <mat-error *ngIf="handleError('time', 'required')">
-                You must provide a <strong>time </strong>
+                You must provide <strong>hours played</strong>
                 </mat-error>
             </mat-form-field>
 
