@@ -9,3 +9,11 @@
 | Yang, Maria Lilian |101151657|
 
 ### [Link to Project](https://quiet-meadow-85627.herokuapp.com/)
+
+### GamerLobby:
+Implements the following:
+- MongoDb with Mongoose
+- Angular Material
+- Express
+- Angular8
+- Heroku as Web Host
