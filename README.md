@@ -1,7 +1,8 @@
 # GamerLobby MEAN Stack Application
 ### COMP 3123 Full Stack Development (Fall 2019)
-### Professor: Mike Denton
-
+### Instructors: 
+- Mike Denton
+- Alla Abramova
 
 | Member Name |Student ID|
 |----------|:-------------:|
