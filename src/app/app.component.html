@@ -1,14 +1,14 @@
 <!-- Toolbar -->
-<mat-toolbar color="primary" class="header">
+<!-- <mat-toolbar color="primary" class="header">
   <div>Hogwarts Gamer Lobby</div>
   <span class="nav-tool-items">
     <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
   </span>
 </mat-toolbar>
 
-<mat-sidenav-container>
+<mat-sidenav-container> -->
   <!-- Sidenav -->
-  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+  <!-- <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
     [fixedTopGap]>
     <mat-nav-list>
      
@@ -21,10 +21,12 @@
       </a>
     
     </mat-nav-list>
-  </mat-sidenav>
+  </mat-sidenav> -->
 
   <!-- Main content -->
-  <mat-sidenav-content>
+  <!-- <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+
+<router-outlet></router-outlet>
