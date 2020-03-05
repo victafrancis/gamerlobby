@@ -9,7 +9,7 @@
 | Victa, Francis |101159185|
 | Yang, Maria Lilian |101151657|
 
-### [Link to Project](http://chat-masters.herokuapp.com/)
+### [Link to Project](https://quiet-meadow-85627.herokuapp.com/)
 
 ### GamerLobby:
 Implements the following:
