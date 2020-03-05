@@ -16,4 +16,5 @@ Implements the following:
 - MongoDb with Mongoose
 - Angular Material
 - Express
+- Angular 8
 - Heroku as Web Host
